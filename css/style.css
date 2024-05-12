@@ -1,0 +1,71 @@
+.warna1{
+background-color: #457a87;
+}
+.warna2{
+background-color: #52aab6;
+}
+.warna3{
+    background-color: #b1e6ff;
+}
+.warna4{
+    background-color: #baf4e1;
+}
+.banner{
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+}
+.highlighted-kategori{
+    height: 250px;
+}
+.kategori-sepatu-pria{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../image/nike-airforce.png');
+    background-size: cover;
+    background-position: center;
+}
+.kategori-sepatu-wanita{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../image/nike-airforce-woman.png');
+    background-size: cover;
+    background-position: center;
+}
+.sepatu-anak-anak{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../image/jordan23-kids.png');
+    background-size: cover;
+    background-position: center;
+}
+.no-decoration{
+    text-decoration: none;
+    color: white;
+}
+.no-decoration:hover{
+    color: #CA965C;
+}
+.text-harga{
+    font-size: 20px;
+    color: #CA965C;
+}
+.image-box{
+    height: 400px;
+}
+.image-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.content-subscribe{
+    background-color: rgba(0,0,0,0.7);
+}
+.content-subscribe a{
+    color: white;
+}
+.banner-produk{
+    height: 45vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/banner.jpg');
+    background-position: 50% 35%;
+}
+.produk-terkait-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
