@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+<?php
+include "connector.php";
+session_start();
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark warna1">
     <div class="container">
@@ -26,10 +30,34 @@
                 <li class="nav-item me-4">
                     <a class="nav-link" href="produk.php">Produk</a>
                 </li>
+                <?php 
+                    if (isset($_SESSION['users'])) { 
+                ?>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="keranjang.php">Keranjang</a>
+                    <a class="nav-link" href="list-pesanan.php">Pesanan</a>
                 </li>
+                <?php 
+                    }
+                ?>
             </ul> 
+            <span class="navbar-text mr-3" style="margin-right: 16px;">
+                <a class="nav-link mr-3"  href="keranjang.php"><i class="fa fa-shopping-cart"></i></a>
+            </span>
+            <span class="navbar-text">
+                <?php 
+                    if (!isset($_SESSION['users'])) { 
+                ?>
+                    <a class="nav-link "  href="login.php">login</a>
+                <?php 
+                    }else{
+                ?>
+                    <!-- <a class="nav-link"  href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['users']['username']; ?></a> -->
+                    <a class="nav-link"  href="Logout.php"> <i class="fa fa-sign-out" style="margin-right: 10px;"></i><?php echo $_SESSION['users']['username']; ?></a>
+                <?php 
+                    }
+                ?>
+
+            </span>
         </div>
     </div>
 </nav>

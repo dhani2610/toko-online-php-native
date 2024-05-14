@@ -53,7 +53,7 @@ if ($queryProduk && mysqli_num_rows($queryProduk) > 0) {
                 <form action="tambahkeranjang.php?id=<?php echo $produk['id_produk'];?>" method="POST">
                 <div class="row g-2">
                     <div class="col-3">
-                        <input type="number" value="1" name="qty" class="form-control">
+                        <input type="number" onkeyup="myFunction()" value="1" id="qty" name="qty" class="form-control">
                     </div>
                     <div class="col-9">
                         <button class="btn btn-primary w-100" type="submit">Tambah Keranjang</button>
@@ -83,5 +83,24 @@ if ($queryProduk && mysqli_num_rows($queryProduk) > 0) {
 <?php require "footer.php";?>
 <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../fontawesome/js/all.min.js"></script>
+<script>
+    function myFunction(){
+        // Ambil nilai stok yang tersedia dari PHP
+        var stokTersedia = <?php echo $produk['stok']; ?>;
+    
+        // Fungsi untuk memeriksa jumlah dan mengatur nilai kembali jika melebihi stok
+        var qtyInput = document.getElementById('qty');
+        var qtyValue = parseInt(qtyInput.value);
+
+        // Jika nilai jumlah melebihi stok, atur nilainya menjadi stok yang tersedia
+        if (qtyValue > stokTersedia) {
+            qtyInput.value = stokTersedia;
+            alert('Maaf, jumlah yang dimasukkan melebihi stok yang tersedia. Jumlah diubah menjadi ' + stokTersedia + '.');
+        }
+        // Panggil fungsi checkQty setiap kali nilai input berubah
+        // document.getElementById('qty').addEventListener('change', checkQty);
+    }
+</script>
+
 </body>
 </html>

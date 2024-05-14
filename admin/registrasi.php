@@ -25,7 +25,7 @@
             Konfirmasi Password
             <input type="password" name="password2" class="form-control w-50 enter mb-4" placeholder=" Konfirmasi Password" required>
             
-            <input type="hidden" value="2" name="role">
+            <input type="hidden" value="1" name="role">
             
             <button type="submit" name="registrasi" class="btn btn-primary w-50 enter mb-4">Registrasi</button>
         </form>

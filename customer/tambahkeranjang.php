@@ -9,6 +9,13 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     exit;
 }
 
+// if (!isset($_SESSION['users']['id_user'])) {
+//     // Redirect atau tindakan lain jika pengguna belum login
+//     header("Location: login.php");
+//     exit; // Penting untuk menghentikan eksekusi skrip
+// }
+
+
 // Inisialisasi nilai qty dengan 1 secara default
 $qty = 1;
 
@@ -23,15 +30,14 @@ if(!isset($_SESSION['keranjang'])){
 }
 
 // Ambil id_produk dari $_GET
-$id = $_GET['id_produk'];
+$id = $_GET['id'];
 
 // Periksa apakah produk dengan id_produk tersebut sudah ada dalam keranjang
 if (!isset($_SESSION['keranjang'][$id])){
     // Jika belum ada, tambahkan produk dengan qty yang ditentukan
     $_SESSION['keranjang'][$id] = $qty;
 } else {
-    // Jika sudah ada, tambahkan qty baru ke qty yang sudah ada
-    $_SESSION['keranjang'][$id] += $qty;
+    $_SESSION['keranjang'][$id] = $qty;
 }
 
 // Redirect ke halaman keranjang.php setelah menambahkan produk
